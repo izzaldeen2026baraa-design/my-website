@@ -1,1 +1,281 @@
 
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#9e526d">
+  <title>أكاديمية خبراء الجمال الدولية</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7f9;
+      color: #392630;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #9e526d;
+      color: white;
+      padding: 28px 16px;
+      text-align: center;
+    }
+
+    header h1 { font-size: 27px; margin: 0; }
+    header p { margin: 8px 0 18px; }
+
+    nav {
+      background: #783b52;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 35px 18px;
+      background: #f4dce5;
+    }
+
+    .hero h2 { color: #783b52; }
+
+    .btn {
+      display: inline-block;
+      background: #9e526d;
+      color: white;
+      text-decoration: none;
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 22px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    section { padding: 25px 16px; }
+
+    h2 {
+      text-align: center;
+      color: #873e5c;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .course {
+      background: white;
+      padding: 15px 10px;
+      text-align: center;
+      border-radius: 13px;
+      border: 1px solid #f0d7e0;
+      box-shadow: 0 3px 10px #783b5210;
+    }
+
+    .course .symbol { font-size: 30px; }
+    .course h3 { font-size: 17px; margin: 5px 0; }
+    .course p { font-size: 13px; margin: 4px 0 12px; }
+
+    .about {
+      background: white;
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      padding: 12px;
+      border: 1px solid #d9b9c5;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #fffafd;
+    }
+
+    form button { width: 100%; margin-top: 20px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #783b52;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 350px) {
+      .courses { grid-template-columns: 1fr; }
+      header h1 { font-size: 23px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>أكاديمية خبراء الجمال الدولية</h1>
+    <p>خطوتج الأولى نحو الاحتراف بعالم الجمال</p>
+    <a class="btn" href="#register">سجلي بالدورة</a>
+  </header>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#courses">الدورات</a>
+    <a href="#about">من نحن</a>
+    <a href="#register">التسجيل</a>
+  </nav>
+
+  <div class="hero" id="home">
+    <h2>طوري موهبتج واصنعي مستقبلج</h2>
+    <p>
+      دورات تدريبية بمجالات التجميل،
+      مع تطبيق عملي وشهادات حسب الدورة.
+    </p>
+    <a class="btn" href="#courses">اكتشفي الدورات</a>
+  </div>
+
+  <section id="courses">
+    <h2>دوراتنا التدريبية</h2>
+
+    <div class="courses">
+      <div class="course">
+        <div class="symbol">👁️</div>
+        <h3>تركيب الرموش</h3>
+        <p>تعلمي التقنيات والرسمات المختلفة.</p>
+        <a class="btn" href="#register"
+           onclick="chooseCourse('تركيب الرموش')">التسجيل</a>
+      </div>
+
+      <div class="course">
+        <div class="symbol">✍️</div>
+        <h3>التاتو والمايكرو</h3>
+        <p>تخطيط الحواجب والأحبار والأجهزة.</p>
+        <a class="btn" href="#register"
+           onclick="chooseCourse('التاتو والمايكرو')">التسجيل</a>
+      </div>
+
+      <div class="course">
+        <div class="symbol">💄</div>
+        <h3>المكياج</h3>
+        <p>تعلمي أساسيات وتقنيات المكياج.</p>
+        <a class="btn" href="#register"
+           onclick="chooseCourse('المكياج')">التسجيل</a>
+      </div>
+
+      <div class="course">
+        <div class="symbol">💇‍♀️</div>
+        <h3>تصفيف الشعر</h3>
+        <p>تدريب على مهارات تصفيف الشعر.</p>
+        <a class="btn" href="#register"
+           onclick="chooseCourse('تصفيف الشعر')">التسجيل</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>من نحن؟</h2>
+    <p>
+      أكاديمية خبراء الجمال الدولية تهدف إلى تطوير
+      مهارات المتدربات وتأهيلهن للعمل في مجال التجميل،
+      من خلال التعلم والتطبيق العملي.
+    </p>
+    <p>العنوان: بغداد، الحارثية، شارع الكندي</p>
+  </section>
+
+  <section id="register">
+    <h2>استمارة التسجيل</h2>
+    <p style="text-align:center">
+      املئي المعلومات التالية لإرسال طلبج عبر واتساب.
+    </p>
+
+    <form onsubmit="sendRegistration(event)">
+      <label for="name">الاسم الكامل</label>
+      <input id="name" required placeholder="اكتبي اسمج">
+
+      <label for="phone">رقم الهاتف</label>
+      <input id="phone" type="tel" required
+             placeholder="رقم الموبايل">
+
+      <label for="course">اختاري الدورة</label>
+      <select id="course" required>
+        <option value="">اختاري الدورة المطلوبة</option>
+        <option>تركيب الرموش</option>
+        <option>التاتو والمايكرو</option>
+        <option>المكياج</option>
+        <option>تصفيف الشعر</option>
+      </select>
+
+      <label for="notes">ملاحظات (اختياري)</label>
+      <textarea id="notes" rows="3"
+                placeholder="أي سؤال أو استفسار"></textarea>
+
+      <button class="btn" type="submit">
+        إرسال طلب التسجيل عبر واتساب
+      </button>
+    </form>
+  </section>
+
+  <footer>
+    أكاديمية خبراء الجمال الدولية
+    <p>نتمنى لج رحلة مليئة بالإبداع والنجاح 💗</p>
+  </footer>
+
+  <script>
+    // استبدلي الرقم برقم واتساب الأكاديمية
+    // اكتبيه برمز الدولة من دون + أو أصفار البداية
+    const whatsappNumber = "9647XXXXXXXXX";
+
+    function chooseCourse(courseName) {
+      document.getElementById("course").value = courseName;
+    }
+
+    function sendRegistration(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const course = document.getElementById("course").value;
+      const notes = document.getElementById("notes").value.trim();
+
+      if (whatsappNumber.includes("X")) {
+        alert("يرجى إضافة رقم واتساب الأكاديمية داخل الكود أولاً.");
+        return;
+      }
+
+      const message =
+        "السلام عليكم، أريد التسجيل في أكاديمية خبراء الجمال الدولية.%0A" +
+        "الاسم: " + encodeURIComponent(name) + "%0A" +
+        "الهاتف: " + encodeURIComponent(phone) + "%0A" +
+        "الدورة: " + encodeURIComponent(course) + "%0A" +
+        "ملاحظات: " + encodeURIComponent(notes);
+
+      window.location.href =
+        "https://wa.me/" + whatsappNumber + "?text=" + message;
+    }
+  </script>
+
