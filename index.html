@@ -3,142 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سجل زبونات الرموش - براء عباس</title>
+<title>أكاديمية خبراء الجمال الدولية</title>
 <style>
+* { box-sizing: border-box; }
 body {
-  font-family: Arial, sans-serif;
-  background: #fff0f5;
-  color: #4a1935;
-  padding: 20px;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff5f8;
+  color: #492438;
 }
-.container {
+header {
+  background: linear-gradient(135deg, #8e4968, #c47c99);
+  color: white;
+  padding: 30px 15px;
+  text-align: center;
+}
+header h1 { margin: 0 0 12px; }
+nav {
+  background: #713650;
+  padding: 14px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  display: inline-block;
+}
+.hero {
+  padding: 45px 18px;
+  text-align: center;
+  background: #f3dce6;
+}
+.hero h2 {
+  color: #8e4968;
+  font-size: 27px;
+}
+button, .register {
+  background: #98546f;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 22px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+section { padding: 25px 16px; }
+section h2 {
+  text-align: center;
+  color: #8e4968;
+}
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 1000px;
+  margin: auto;
+}
+.course {
+  background: white;
+  border: 1px solid #efd4e0;
+  border-radius: 17px;
+  padding: 22px 16px;
+  text-align: center;
+  box-shadow: 0 3px 10px #ead6df;
+}
+.emoji { font-size: 42px; }
+.course h3 { color: #713650; }
+form {
   max-width: 500px;
   margin: auto;
   background: white;
   padding: 22px;
-  border-radius: 18px;
-  box-shadow: 0 4px 15px #d8a3bb;
-}
-h1 {
-  text-align: center;
-  color: #b83280;
-  font-size: 25px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #ead6df;
 }
 label {
   display: block;
-  margin-top: 14px;
-  font-weight
+  margin-top: 13px;
+  font-weight: bold;
 }
-input, select {
+input, select, textarea {
   width: 100%;
-  box-sizing: border-box;
   padding: 12px;
   margin-top: 6px;
-  border: 1px solid #e4b5cd;
-  border-radius: 9px;
+  border: 1px solid #dcb8c9;
+  border-radius: 8px;
   font-size: 16px;
 }
-button {
-  width: 100%;
-  margin-top: 18px;
-  padding: 13px;
-  border: none;
-  border-radius: 10px;
-  background: #b83280;
+form button { width: 100%; margin-top: 20px; }
+footer {
+  text-align: center;
+  padding: 22px;
+  background: #713650;
   color: white;
-  font-size: 17px;
-}
-.entry {
-  background: #fff0f5;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 10px;
-  overflow-wrap: anywhere;
-}
-.delete {
-  background: #8c294f;
 }
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>براء عباس</h1>
-  <h2 style="text-align:center">سجل زبونات الرموش 💗</h2>
-  <form id="customerForm">
-    <label>الاسم الكامل</label>
-    <input id="fullName" required placeholder="اكتبي اسم الزبونة">
-    <label>تاريخ الزيارة</label>
-    <input id="visitDate" type="date" required>
-    <label>نوع الرموش المستخدمة</label>
-    <select id="lashType" required>
-      <option value="">اختاري نوع الرموش</option>
-      <option>كلاسيك</option>
-      <option>فوليوم</option>
-      <option>ميغا فوليوم</option>
-      <option>هايبرد</option>
-      <option>رموش وايسبي</option>
-      <option>رفع رموش</option>
-      <option>نوع آخر</option>
-    </select>
-    <label>رقم الهاتف</label>
-    <input id="phone" type="tel" required placeholder="رقم هاتف الزبونة">
-    <label>المبلغ (دينار عراقي)</label>
-    <input id="amount" type="number" min="0" required placeholder="المبلغ">
-    <button type="submit">حفظ بيانات الزبونة</button>
-  </form>
-  <h2>الزيارات المسجلة</h2>
-  <div id="records"></div>
+<header>
+  <h1>أكاديمية خبراء الجمال الدولية</h1>
+  <p>خطوتج الأولى نحو الاحتراف بعالم الجمال 💗</p>
+</header>
+<nav>
+  <a href="#home">الرئيسية</a>
+  <a href="#courses">الدورات</a>
+  <a href="#register">التسجيل</a>
+</nav>
+<div class="hero" id="home">
+  <h2>طوّري موهبتج واصنعي مستقبلج</h2>
+  <p>دورات تدريبية بمجالات التجميل مع تطبيق عملي.</p>
+  <a class="register" href="#courses">اكتشفي الدورات</a>
 </div>
+<section id="courses">
+  <h2>دوراتنا التدريبية</h2>
+  <div class="courses">
+    <div class="course">
+      <div class="emoji">👁️</div>
+      <h3>دورة تركيب الرموش</h3>
+      <p>تعلمي تقنيات تركيب الرموش المختلفة.</p>
+      <button onclick="chooseCourse('تركيب الرموش')">التسجيل</button>
+    </div>
+    <div class="course">
+      <div class="emoji">✍️</div>
+      <h3>دورة التاتو</h3>
+      <p>تعرّفي على أساسيات التاتو وتقنياته.</p>
+      <button onclick="chooseCourse('التاتو')">التسجيل</button>
+    </div>
+    <div class="course">
+      <div class="emoji">💇‍♀️</div>
+      <h3>دورة الحلاقة الشاملة</h3>
+      <p>تدريب على أساسيات القص والتصفيف.</p>
+      <button onclick="chooseCourse('الحلاقة الشاملة')">التسجيل</button>
+    </div>
+    <div class="course">
+      <div class="emoji">💅</div>
+      <h3>دورة الأظافر</h3>
+      <p>تعلمي العناية بالأظافر وتقنيات تجميلها.</p>
+      <button onclick="chooseCourse('الأظافر')">التسجيل</button>
+    </div>
+    <div class="course">
+      <div class="emoji">🧴</div>
+      <h3>دورة البشرة</h3>
+      <p>تعرّفي على أساسيات العناية بالبشرة.</p>
+      <button onclick="chooseCourse('البشرة')">التسجيل</button>
+    </div>
+    <div class="course">
+      <div class="emoji">✨</div>
+      <h3>دورة الليزر</h3>
+      <p>مبادئ استخدام أجهزة الليزر بأمان وتحت إشراف مختصين.</p>
+      <button onclick="chooseCourse('الليزر')">التسجيل</button>
+    </div>
+    <div class="course">
+      <div class="emoji">💇</div>
+      <h3>دورة مساعد كوافير</h3>
+      <p>تعلمي مهارات مساعدة الكوافير داخل الصالون.</p>
+      <button onclick="chooseCourse('مساعد كوافير')">التسجيل</button>
+    </div>
+  </div>
+</section>
+<section id="register">
+  <h2>استمارة التسجيل 💗</h2>
+  <form id="registrationForm">
+    <label>الاسم الكامل</label>
+    <input id="name" required placeholder="اكتبي اسمج الكامل">
+    <label>رقم الهاتف</label>
+    <input id="phone" type="tel" required placeholder="رقم الهاتف">
+    <label>اختاري الدورة</label>
+    <select id="course" required>
+      <option value="">اختاري الدورة المطلوبة</option>
+      <option>تركيب الرموش</option>
+      <option>التاتو</option>
+      <option>الحلاقة الشاملة</option>
+      <option>الأظافر</option>
+      <option>البشرة</option>
+      <option>الليزر</option>
+      <option>مساعد كوافير</option>
+    </select>
+    <label>ملاحظات (اختياري)</label>
+    <textarea id="notes" rows="3" placeholder="أي استفسار أو ملاحظة"></textarea>
+    <button type="submit">إرسال طلب التسجيل</button>
+  </form>
+</section>
+<footer>
+  <p>أكاديمية خبراء الجمال الدولية</p>
+  <p>نتمنى لج رحلة تعليمية مليئة بالنجاح 🌸</p>
+</footer>
 <script>
-const form = document.getElementById("customerForm");
-const records = document.getElementById("records");
-let customers = JSON.parse(
-  localStorage.getItem("baraaCustomers") || "[]"
-);
-function renderRecords() {
-  records.innerHTML = "";
-  customers.forEach((customer, index) => {
-    const entry = document.createElement("div");
-    entry.className = "entry";
-    const details = document.createElement("p");
-    details.textContent =
-      "الاسم: " + customer.name +
-      " | تاريخ الزيارة: " + customer.date +
-      " | نوع الرموش: " + customer.lashes +
-      " | الهاتف: " + customer.phone +
-      " | المبلغ: " + customer.amount + " دينار";
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "delete";
-    deleteButton.textContent = "حذف السجل";
-    deleteButton.onclick = () => {
-      if (confirm("متأكدة تريدين حذف هذا السجل؟")) {
-        customers.splice(index, 1);
-        saveRecords();
-      }
-    };
-    entry.append(details, deleteButton);
-    records.appendChild(entry);
+function chooseCourse(courseName) {
+  document.getElementById("course").value = courseName;
+  document.getElementById("register").scrollIntoView({
+    behavior: "smooth"
   });
 }
-function saveRecords() {
-  localStorage.setItem("baraaCustomers", JSON.stringify(customers));
-  renderRecords();
-}
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-  customers.push({
-    name: document.getElementById("fullName").value.trim(),
-    date: document.getElementById("visitDate").value,
-    lashes: document.getElementById("lashType").value,
-    phone: document.getElementById("phone").value.trim(),
-    amount: document.getElementById("amount").value
-  });
-  saveRecords();
-  form.reset();
-  alert("تم حفظ بيانات الزبونة 💗");
+document.getElementById("registrationForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const course = document.getElementById("course").value;
+  const notes = document.getElementById("notes").value.trim();
+  const message =
+    "طلب تسجيل جديد - أكاديمية خبراء الجمال الدولية%0A" +
+    "الاسم: " + encodeURIComponent(name) + "%0A" +
+    "الهاتف: " + encodeURIComponent(phone) + "%0A" +
+    "الدورة: " + encodeURIComponent(course) + "%0A" +
+    "ملاحظات: " + encodeURIComponent(notes);
+  // ضعي رقم واتساب الأكاديمية الدولي بدل الرقم التجريبي أدناه
+  const academyNumber = "9647XXXXXXXXX";
+  if (academyNumber.includes("X")) {
+    alert("استمارة التسجيل جاهزة، لكن يجب إضافة رقم واتساب الأكاديمية داخل الكود أولاً.");
+    return;
+  }
+  window.open("https://wa.me/" + academyNumber + "?text=" + message, "_blank");
 });
-renderRecords();
 </script>
 </body>
 </html>
